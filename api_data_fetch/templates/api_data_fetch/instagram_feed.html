@@ -1,0 +1,15 @@
+{% extends 'api_data_fetch/base.html' %}
+
+{% block content %}
+  <h1>My Instagram Feed</h1>
+  <div class="grid">
+    {% for photo in photos %}
+      <div class="grid-item">
+        <img src="{{ photo.image_url }}" alt="{{ photo.caption }}">
+        {% comment %} <div class="caption">{{ photo.caption }}</div>
+        <div class="likes">{{ photo.likes }} likes</div>
+        <div class="comments">{{ photo.comments }} comments</div> {% endcomment %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
